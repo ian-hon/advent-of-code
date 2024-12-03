@@ -1,6 +1,7 @@
 mod challenge_input;
-mod d2;
+mod d3;
 
 fn main() {
-    d2::p2(challenge_input::input(2));
+    // println!("{}", (5i32 - 5i32).signum());
+    d3::p2(challenge_input::input(3));
 }
