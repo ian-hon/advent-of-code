@@ -1,11 +1,13 @@
 mod challenge_input;
-mod d6;
+mod d7;
 
 fn main() {
-    // let mut a = 3;
-    // // a = (a << 4) | 1;
-    // a |= 1 << 3;
-    // println!("{a}");
+    // for i in 0..27 {
+    //     println!("{}", i % 3);
+    // }
 
-    d6::p2(challenge_input::input(6));
+    // let mut x = 30;
+    // println!("{}", d7::format_radix(x, 3));
+
+    d7::p2(challenge_input::input(7));
 }
