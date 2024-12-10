@@ -852,4 +852,16 @@ data = """28690: 43 665 1 88 9
 # evaluate = lambda t, c, a: [a := [a + nested_i, a * nested_i][format(t, 'b').rjust(len(c) - 1, '0')[nested_index] == '0'] for (nested_index, nested_i) in enumerate(c[1::])][-1]
 # print(sum([(lambda t, o: max([evaluate(i, o, o[0]) if (evaluate(i, o, o[0]) == t) else 0 for i in range(0, pow(2, len(o) - 1))]))(int(l.split(':')[0]), [int(item) for item in l.split(':')[1].split()]) for l in data.strip().split('\n')]))
 
-print(sum([(lambda t, o: max([(lambda t, c, a: [a := [a + nested_i, a * nested_i][format(t, 'b').rjust(len(c) - 1, '0')[nested_index] == '0'] for (nested_index, nested_i) in enumerate(c[1::])][-1])(i, o, o[0]) if ((lambda t, c, a: [a := [a + nested_i, a * nested_i][format(t, 'b').rjust(len(c) - 1, '0')[nested_index] == '0'] for (nested_index, nested_i) in enumerate(c[1::])][-1])(i, o, o[0]) == t) else 0 for i in range(0, pow(2, len(o) - 1))]))(int(l.split(':')[0]), [int(item) for item in l.split(':')[1].split()]) for l in data.strip().split('\n')]))
+# print(sum([(lambda t, o: max([(lambda t, c, a: [a := [a + nested_i, a * nested_i][format(t, 'b').rjust(len(c) - 1, '0')[nested_index] == '0'] for (nested_index, nested_i) in enumerate(c[1::])][-1])(i, o, o[0]) if ((lambda t, c, a: [a := [a + nested_i, a * nested_i][format(t, 'b').rjust(len(c) - 1, '0')[nested_index] == '0'] for (nested_index, nested_i) in enumerate(c[1::])][-1])(i, o, o[0]) == t) else 0 for i in range(0, pow(2, len(o) - 1))]))(int(l.split(':')[0]), [int(item) for item in l.split(':')[1].split()]) for l in data.strip().split('\n')]))
+
+v = 'xxxx'
+
+result = 0
+l = 0
+for r, i in enumerate(v):
+    current = v[l:r]
+    if len(set(current)) != len(current):
+        l = r
+        result = max(result, len(set(current)))
+result = max(result, len(set(current)))
+print(result)
