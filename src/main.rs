@@ -1,5 +1,5 @@
 mod challenge_input;
-mod d10;
+mod d11;
 
 fn main() {
     // for i in 0..27 {
@@ -9,5 +9,5 @@ fn main() {
     // let mut x = 30;
     // println!("{}", d7::format_radix(x, 3));
 
-    d10::p2(challenge_input::input(10));
+    d11::p2(challenge_input::input(11));
 }
