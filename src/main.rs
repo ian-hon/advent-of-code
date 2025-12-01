@@ -1,6 +1,6 @@
 mod challenge_input;
-mod d12;
+mod days;
 
 fn main() {
-    d12::p1(challenge_input::input(12));
+    days::d1::p1(challenge_input::input(1));
 }
