@@ -4486,5 +4486,40 @@ L12
 L48
 L36"""
 
+_raw = """L68
+L30
+R48
+L5
+R60
+L55
+L1
+L99
+R14
+L82"""
+
+
+# for l in [[int(i[1:]), i[0] == 'R'] for i in raw.split('\n')]:
+    # print(sum([1 for i in range(l[0]) if (dial := 99 if (dial + l[1] < 0) else (0 if (dial + l[1] >= 100) else (dial + l[1]))) == 0]))
+    # sum([1 for i in raw.split('\n') if (dial := ((dial + (int(i[1::]) * (-1 if i[0] == 'L' else 1))) % 100)) == 0])
+    # print(l)
+
+# dial, count = 50, 0
+# for l in [[int(i[1:]), (1 if i[0] == 'R' else -1)] for i in raw.split('\n')]:
+#     count += sum([1 for i in range(l[0]) if (dial := 99 if (dial + l[1] < 0) else (0 if (dial + l[1] >= 100) else (dial + l[1]))) == 0])
+# print(count)
+
+
+# dial, count = 50, 0
+# for l in [[int(i[1:]), (1 if i[0] == 'R' else -1)] for i in raw.split('\n')]:
+#     count += sum([1 for i in range(l[0]) if (dial := 99 if (dial + l[1] < 0) else (0 if (dial + l[1] >= 100) else (dial + l[1]))) == 0])
+# print(count)
+
+
 dial = 50
 print(sum([1 for i in raw.split('\n') if (dial := ((dial + (int(i[1::]) * (-1 if i[0] == 'L' else 1))) % 100)) == 0]))
+
+dial, count = 50, 0
+print([count := count + sum([1 for i in range(l[0]) if (dial := 99 if (dial + l[1] < 0) else (0 if (dial + l[1] >= 100) else (dial + l[1]))) == 0]) for l in [[int(i[1:]), (1 if i[0] == 'R' else -1)] for i in raw.split('\n')]][-1])
+
+# for l in [[int(i[1:]), (1 if i[0] == 'R' else -1)] for i in raw.split('\n')]:
+#     count += sum([1 for i in range(l[0]) if (dial := 99 if (dial + l[1] < 0) else (0 if (dial + l[1] >= 100) else (dial + l[1]))) == 0])
