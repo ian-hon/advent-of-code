@@ -1,0 +1,32 @@
+pub fn p1(s: String) {
+    // let s = "11-22,95-115,998-1012,1188511880-1188511890,222220-222224,1698522-1698528,446443-446449,38593856-38593862,565653-565659,824824821-824824827,2121212118-2121212124";
+
+    let mut total: i64 = 0;
+    for line in s.split(",") {
+        let l = line.split("-").collect::<Vec<&str>>();
+        let lower = l[0].parse::<i64>().unwrap();
+        let upper = l[1].parse::<i64>().unwrap();
+
+        // println!("{lower} : {upper}");
+
+        for number in lower..=upper {
+            // only works if number of digits are even
+            let digits = number.to_string().len();
+            if digits % 2 != 0 {
+                continue;
+            }
+
+            let offset = 10i64.pow((digits / 2) as u32);
+
+            let left = number / offset;
+            let right = number - (left * offset);
+
+            if left == right {
+                total += number;
+            }
+        }
+    }
+    println!("total: {total}");
+}
+
+pub fn p2(s: String) {}

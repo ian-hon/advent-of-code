@@ -40,8 +40,6 @@ pub fn p2(s: String) {
                     count += 1;
                 }
             }
-
-            println!("R{l} : {count} : {total}");
         } else {
             let l = &l[1..].to_string().parse::<i32>().unwrap();
 
@@ -56,8 +54,6 @@ pub fn p2(s: String) {
                     count += 1;
                 }
             }
-
-            println!("L{l} : {count} : {total}");
         }
     }
 
