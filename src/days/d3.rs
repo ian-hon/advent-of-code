@@ -60,5 +60,38 @@ pub fn p1(s: String) {
 }
 
 pub fn p2(s: String) {
+    //     let s = "987654321111111
+    // 811111111111119
+    // 234234234234278
+    // 818181911112111";
+
     // dfs backtrack?
+    let mut total = 0;
+    for line in s.lines().map(|x| {
+        x.chars()
+            .map(|y| y.to_digit(10).unwrap() as u8)
+            .collect::<Vec<u8>>()
+    }) {
+        let length = line.len();
+        let mut current = 0;
+
+        let mut previous = 0;
+        for i in 0..12 {
+            let ending = length - (11 - i);
+            let mut to_search = line[previous..ending]
+                .iter()
+                .copied()
+                .enumerate()
+                .collect::<Vec<(usize, u8)>>();
+            to_search.sort_by_key(|x| (x.1 as u64 * 1000) - (x.0 as u64));
+            let last = to_search.last().unwrap().clone();
+
+            previous = last.0 + 1 + previous;
+
+            current += (last.1 as u64) * (10_u64.pow(11 - (i as u32)));
+        }
+        println!("{line:?} current: {current}");
+        total += current;
+    }
+    println!("total: {total}");
 }
